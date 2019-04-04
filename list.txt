@@ -4,3 +4,4 @@ pola,katie,returning visitor,(333) 333-3333
 school,happy,member,(123) 123-1231
 lawrence,david,member,(222) 333-4444
 no,ya,first time visitor,(111) 123-1234
+;lkjadsf,a;sdlfkj,first time visitor,(222) 222-222

@@ -29,18 +29,26 @@ def readFromList():
 
 def getDate():
     while True:
-        isValidDate = True
-        date = input("Date? (mm/dd/yyyy)  ")
-        if (len(date) == 10) & (date[2:3] == "/") & (date[5:6] == "/"):
-            dateParts = date.split("/")
-            try:
-                dateFormatted = datetime.date(int(dateParts[2]), int(dateParts[0]), int(dateParts[1]))
-            except:
-                isValidDate = False
-            if (isValidDate):
-                break
-        print("Sorry, but that was not a valid option. Please enter again.\n")
-    return dateFormatted
+        isToday = input("Are you entering information for today?  ")
+        if ((isToday == "yes") | (isToday == "no")):
+            break
+    if (isToday == "yes"):
+        print(datetime.datetime.now())
+        return datetime.datetime.now()
+    else:
+        while True:
+            isValidDate = True
+            date = input("Date? (mm/dd/yyyy)  ")
+            if (len(date) == 10) & (date[2:3] == "/") & (date[5:6] == "/"):
+                dateParts = date.split("/")
+                try:
+                    dateFormatted = datetime.date(int(dateParts[2]), int(dateParts[0]), int(dateParts[1]))
+                except:
+                    isValidDate = False
+                if (isValidDate):
+                    break
+            print("Sorry, but that was not a valid option. Please enter again.\n")
+        return dateFormatted
 
 def getService():
     while True:
@@ -73,7 +81,7 @@ def addPerson():
         status = "member"
     elif (statusCheck == "f"):
         status = "first time visitor"
-    elif (statusCheck == "f"):
+    else:
         status = "returning visitor"
     while True:
         phoneNum = input("What is their phone number (\"(xxx) xxx-xxxx\")  ")
@@ -85,7 +93,7 @@ def addPerson():
     newPerson = Person(lastName, firstName, status, phoneNum)
     allPeople.append(newPerson)
 
-# date = getDate()
+date = getDate()
 # service = getService()
 askToAdd()
 for person in allPeople:
