@@ -65,10 +65,16 @@ def addPerson():
     firstName = input("What is their first name?  ").lower()
     lastName = input("What is their last name?  ").lower()
     while True:
-        status = input("What is their status? (\"Member\", \"First Time-Visitor\", or \"Returning Visitor\")  ").lower()
-        if ((status == "member") | (status == "first time visitor") | (status == "returning visitor")):
+        statusCheck = input("What is their status?\n   If member, press m.\n   If first time visitor, press f.\n   If returning visitor, press r  ").lower()
+        if ((statusCheck == "m") | (statusCheck == "f") | (statusCheck == "r")):
             break
         print("Sorry, but that was not a valid option. Please enter again.\n")
+    if (statusCheck == "m"):
+        status = "member"
+    elif (statusCheck == "f"):
+        status = "first time visitor"
+    elif (statusCheck == "f"):
+        status = "returning visitor"
     while True:
         phoneNum = input("What is their phone number (\"(xxx) xxx-xxxx\")  ")
         if ((phoneNum[0:1] == "(") & (phoneNum[4:5] == ")") & (phoneNum[5:6] == " ") & (phoneNum[9:10] == "-")):
@@ -79,7 +85,7 @@ def addPerson():
     newPerson = Person(lastName, firstName, status, phoneNum)
     allPeople.append(newPerson)
 
-date = getDate()
+# date = getDate()
 # service = getService()
 askToAdd()
 for person in allPeople:

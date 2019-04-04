@@ -1,4 +1,6 @@
 polar,david,member,(111) 111-1111
 polar,rick,first time visitor,(222) 222-2222
 pola,katie,returning visitor,(333) 333-3333
-Small,Stephen,first time visitor,(123) 456-7890
+school,happy,member,(123) 123-1231
+lawrence,david,member,(222) 333-4444
+no,ya,first time visitor,(111) 123-1234
