@@ -94,7 +94,7 @@ def addPerson():
     allPeople.append(newPerson)
 
 date = getDate()
-# service = getService()
+service = getService()
 askToAdd()
 for person in allPeople:
     writeToList(person)
