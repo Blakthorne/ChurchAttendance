@@ -52,10 +52,14 @@ def getDate():
 
 def getService():
     while True:
-        service = input("Morning or Evening?  ").lower()
-        if ((service == "morning") | (service == "evening")):
+        serviceCheck = input("Morning or Evening?\n   If morning, press m.\n   If evening, press e.\n").lower()
+        if ((serviceCheck == "m") | (serviceCheck == "e")):
             break
         print("Sorry, but that was not a valid option. Please enter again.\n")
+    if (serviceCheck == "m"):
+        service = "morning"
+    elif (serviceCheck == "e"):
+        service = "evening"
     return service
 
 def askToAdd():
@@ -94,7 +98,7 @@ def addPerson():
     allPeople.append(newPerson)
 
 date = getDate()
-# service = getService()
+service = getService()
 askToAdd()
 for person in allPeople:
     writeToList(person)
