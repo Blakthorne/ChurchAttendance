@@ -1,0 +1,2 @@
+polar,emily,member,(123) 456-7890,egpolar@yahoo.com
+polar,david,member,(987) 234-8761,dlpolar38@gmail.com
